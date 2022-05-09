@@ -1,152 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
 
- <!DOCTYPE html>
- <html lang ="en">
- 
- <head>
-     <title>Search</title>
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="css/bootstrap.min.css">
- </head>
- <body class="body">
+<head>
+  <title>Search</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    .character-container {
+      display: grid;
+      grid-template-columns: 33% 33% 33%;
+      overflow: hidden;
+      column-gap: 1px;
+      height: 100vh;
+    }
+
+    .grid-item {
+      margin: 5px;
+    }
+  </style>
+</head>
+
+<body class="body" style="
+ background-image: url('images/nypllight.jpg');
+ height: 100%;
+ background-attachment: fixed;">
 
   <header>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="home.html">Library</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-    
-          <div class="collapse navbar-collapse" id="navbarsExample04">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="home.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.html">Log In</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-bs-toggle="dropdown" aria-expanded="false">Get Involved!</a>
-                <ul class="dropdown-menu" aria-labelledby="dropdown04">
-                  <li><a class="dropdown-item" href="#">Book Club</a></li>
-                  <li><a class="dropdown-item" href="#">Local Events</a></li>
-                  <li><a class="dropdown-item" href="#">Community</a></li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link">About</a>
-              </li>
-            </ul>
-            <form>
-              <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-            </form>
-          </div>
-        </div>
-      </nav>
-</header>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="home.html">Library</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04"
+          aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-<main class="container py-5">
-  <form>
-    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-    <fieldset class="mb-3">
-      <legend>Search by:</legend>
-      <div class="form-check">
-        <input type="radio" name="radios" class="form-check-input" id="exampleRadio1">
-        <label class="form-check-label" for="exampleRadio1">Title</label>
-      </div>
-      <div class="form-check">
-        <input type="radio" name="radios" class="form-check-input" id="exampleRadio2">
-        <label class="form-check-label" for="exampleRadio2">Author</label>
-      </div>
-      <div class="form-check">
-        <input type="radio" name="radios" class="form-check-input" id="exampleRadio2">
-        <label class="form-check-label" for="exampleRadio2">Keyword</label>
-      </div>
-    </fieldset>
-  </form> 
-  <p><a class="btn btn-lg btn-primary" href="#">Search</a></p>
-    <hr class="my-5">
-  
-    <div class="row" data-masonry='{"percentPosition": true }'>
-      
-      <div class="col-sm-6 col-lg-4 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Book</h5>
-            <p class="card-text">This is the book description.</p>
-            <p class="card-text"><small class="text-muted">Copies Available: 2</small></p>
-          </div>
+        <div class="collapse navbar-collapse" id="navbarsExample04">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+            </li>
+            <!--if not logged in; if logged in, 2 list items: account and log out!-->
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Log In</a>
+            </li>
+          </ul>
+          <form>
+            <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+          </form>
         </div>
       </div>
+    </nav>
+  </header>
 
-      <div class="col-sm-6 col-lg-4 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Book</h5>
-            <p class="card-text">This is the book description..</p>
-            <p class="card-text"><small class="text-muted">Copies Available: 2</small></p>
+  <main class="container py-5">
+    <form>
+      <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+      <fieldset class="mb-3">
+        <legend>Search by:</legend>
+        <div class="form-check">
+          <input type="radio" name="radios" class="form-check-input" id="exampleRadio1">
+          <label class="form-check-label" for="exampleRadio1">Title</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" name="radios" class="form-check-input" id="exampleRadio2">
+          <label class="form-check-label" for="exampleRadio2">Author</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" name="radios" class="form-check-input" id="exampleRadio2">
+          <label class="form-check-label" for="exampleRadio2">Keyword</label>
+        </div>
+      </fieldset>
+    </form>
+    <p><a class="btn btn-lg btn-primary" href="#">Search</a></p>
+    <hr class="my-2">
+
+    <div class="grid-container">
+      <div class="character-container">
+        <div class="grid-item">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Pride and Prejudice</h5>
+              <p class="card-text">Author: Jane Austen</p>
+              <p class="card-text">Description: idk dude I haven't read it</p>
+              <p class="card-text"><small class="text-muted">Copies available: 3</small></p>
+              <button class="btn btn-primary">Rent</button>
+              <button class="btn btn-primary">Buy</button>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="col-sm-6 col-lg-4 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Book</h5>
-            <p class="card-text">This is the book description.</p>
-            <p class="card-text"><small class="text-muted">Copies Available: 2</small></p>
-          </div>
-        </div>
       </div>
-
-      <div class="col-sm-6 col-lg-4 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Book</h5>
-            <p class="card-text">This is the book description.</p>
-            <p class="card-text"><small class="text-muted">Copies Available: 2</small></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-sm-6 col-lg-4 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Book</h5>
-            <p class="card-text">This is the book description.</p>
-            <p class="card-text"><small class="text-muted">Copies Available: 2</small></p>
-          </div>
-        </div>
-      </div>
-
     </div>
+
 
   </main>
 
-  <footer>
-    <div class="container">
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <p class="col-md-4 mb-0 text-muted">Public Library</p>
-    
-        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-          <img class="mb-4" src="images/book.jpg" alt="" width="72">
-        </a>
-    
-        <ul class="nav col-md-4 justify-content-end">
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Catalog</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Events</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Community</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-        </ul>
-      </footer>
-    </div>
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="width: 100%; background-color: #212529; bottom: 0;
+  left: 0;">
+    <p class="col-md-4 mb-0 text-muted">Public Library</p>
+
+    <a href="/" class="nav col-md-4 justify-content-end" style="margin: 30px;">
+      <img class="mb-4" src="images/book.jpg" alt="" width="72">
+    </a>
+
   </footer>
-  
-      <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-      <script async src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script>
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
+    crossorigin="anonymous"></script>
 
 </body>
+
 </html>
