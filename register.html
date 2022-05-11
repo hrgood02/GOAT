@@ -65,73 +65,72 @@ background-attachment: fixed;">
 
 
 
-<main class="form-signin">
-  <form action="php/registerFunction.php" method="post">
-    <img class="mb-4" src="images/book.jpg" alt="" width="72">
-    <h1 class="h3 mb-3 fw-normal">Create an account to access all our library's resources!</h1>
-    <div class="form-floating">
-      <input type="name" class="form-control" id="name" placeholder="First Name" name="firstName" required>
-      <label>First Name</label>
-    </div>
-    <div class="form-floating">
-      <input type="name" class="form-control" id="name" placeholder="Last Name" name="lastName" required>
-      <label>Last Name</label>
-    </div>
-    <div class="form-floating">
-      <input type="address" class="form-control" id="address" placeholder="Address" name="address" required>
-      <label>Address</label>
-    </div>
+  <main class="form-signin">
+    <form action="php/registerFunction.php" method="post">
+      <img class="mb-4" src="images/book.jpg" alt="" width="72">
+      <h1 class="h3 mb-3 fw-normal">Create an account to access all our library's resources!</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="form-floating">
+              <input type="name" class="form-control" id="name" placeholder="First Name" name="firstName" required>
+              <label>First Name</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-floating">
+              <input type="name" class="form-control" id="name" placeholder="Last Name" name="lastName" required>
+              <label>Last Name</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-floating">
+        <input type="address" class="form-control" id="address" placeholder="Address" name="address" required>
+        <label>Address</label>
+      </div>
 
-    <div class="form-floating">
-      <input type="city" class="form-control" id="city" placeholder="City" name="city" required>
-      <label>City</label>
-    </div>
+      <div class="form-floating">
+        <input type="city" class="form-control" id="city" placeholder="City" name="city" required>
+        <label>City</label>
+      </div>
 
-    <div class="form-floating">
-      <input type="state" class="form-control" id="State" placeholder="State" name="state" required>
-      <label>State</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="ZIP Code" name="zipCode" required>
-      <label>ZIP Code</label>
-    </div>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="form-floating">
+              <input type="state" class="form-control" id="State" placeholder="State" name="state" required>
+              <label>State</label>
+            </div>
+          </div>
+          <div class="col">
+            <div class="form-floating">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="ZIP Code" name="zipCode"
+                required>
+              <label>ZIP Code</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email"
+          required>
+        <label for="floatingInput">Email address</label>
+      </div>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password"
+          required>
+        <label for="floatingPassword">Password</label>
+      </div>
 
-    <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="email" required>
-      <label for="floatingInput">Email address</label>
-    </div>
-    <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password" required>
-      <label for="floatingPassword">Password</label>
-    </div>
 
-  
-    <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Register</button>
-    <p>Already have an account?</p>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
-  </form>
-</main>
+      <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Register</button>
+      <p>Already have an account?</p>
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Sign In</button>
+    </form>
+  </main>
 
-
-<footer>
-  <div class="container">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-      <p class="col-md-4 mb-0 text-muted">Public Library</p>
-  
-      <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-        <img class="mb-4" src="images/book.jpg" alt="" width="72">
-      </a>
-  
-      <ul class="nav col-md-4 justify-content-end">
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Catalog</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Events</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Community</a></li>
-        <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">About</a></li>
-      </ul>
-    </footer>
-  </div>
-</footer>
 </body>
 
 </html>
