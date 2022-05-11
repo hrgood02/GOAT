@@ -108,38 +108,10 @@ margin-bottom: 50px;">
                 class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
                 style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
                 <h1 class="h2">My Info</h1>
-                <a class="btn btn-lg btn-primary" href="#">Edit</a>
               </div>
               <div class="container"
                 style="border:gray; border-style: dotted; background-color: #ffffff80; border-radius: 10px; padding: 10px;">
-                <form action="/action_page.php">
-                  <label for="fname">First name:</label>
-                  <input type="text" id="fname" name="fname" value="John" style="border-radius: 5px; margin: 5px;"
-                    readonly><br>
-                  <label for="lname">Last name:</label>
-                  <input type="text" id="lname" name="lname" value="User" style="border-radius: 5px; margin: 5px;"
-                    readonly><br><br>
-
-                  <label for="email">Email:</label>
-                  <input type="text" id="email" name="email" value="user@email.com"
-                    style="border-radius: 5px; margin: 5px;" readonly><br><br>
-
-                  <label for="address">Address Line 1:</label>
-                  <input type="text" id="address" name="address" value="123 Street Ave."
-                    style="border-radius: 5px; margin: 5px;" readonly><br>
-                  <label for="address2">Address Line 2:</label>
-                  <input type="text" id="address2" name="address2" value="Apt. 12"
-                    style="border-radius: 5px; margin: 5px;" readonly><br>
-                  <label for="city">City:</label>
-                  <input type="text" id="city" name="city" value="Townsville" style="border-radius: 5px; margin: 5px;"
-                    readonly><br>
-                  <label for="state">State:</label>
-                  <input type="text" id="state" name="state" value="WI" style="border-radius: 5px; margin: 5px;"
-                    readonly><br>
-                  <label for="ZIP">ZIP Code:</label>
-                  <input type="text" id="ZIP" name="ZIP" value="12345" style="border-radius: 5px; margin: 5px;"
-                    readonly><br>
-                </form>
+                <?php include 'php/accountFunctions.php';?>
               </div>
             </div>
             <div class="col">
