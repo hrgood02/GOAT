@@ -28,6 +28,19 @@
         .bd-placeholder-img-lg {
           font-size: 3.5rem;
         }
+        .character-container {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        overflow: hidden;
+        column-gap: 1px;
+        height: 100vh;
+        padding: 5px;
+        margin: 5px;
+      }
+
+      .grid-item {
+        margin: 5px;
+      }
       }
     </style>
 
@@ -66,19 +79,23 @@
         </nav>
   </header>
 
+  <div class="grid-container">
+    <div class="character-container">
+      <div class="grid-item">
+        <div class="card">
+          <div class="card-body" style="background-color: cornflowerblue;">
+            <h5 class="card-title">The Fault in Our Stars</h5>
+            <p class="card-text">Author: John Green</p>
+            <p class="card-text">Description: The Fault in Our Stars is a novel by John Green. It is his fourth solo novel, and sixth novel overall. It was published on January 10, 2012</p>
+            <p class="card-text"><small class="text-muted">Estimated available: June 3</small></p>
+          </div>
+        </div>
+      </div>
 
+    </div>
+  </div>
 
     <script src="js/bootstrap.bundle.min.js"></script>
-
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="width: 100%; background-color: #212529; bottom: 0;
-    left: 0;">
-      <p class="col-md-4 mb-0 text-muted">Public Library</p>
-  
-      <a href="/" class="nav col-md-4 justify-content-end" style="margin: 30px;">
-        <img class="mb-4" src="images/book.jpg" alt="" width="72">
-      </a>
-  
-    </footer>  
 
   </body>
 </html>
