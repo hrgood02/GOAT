@@ -24,36 +24,35 @@
     }
     
     $email=$_SESSION['email'];
-    $query = "SELECT  firstName, lastName, email, address, city, state, zipCode FROM libraryAccount WHERE email=$email";
+    $query = "SELECT  * FROM libraryAccount WHERE email=$email";
+    $result=mysqli_query($dbc, $query);
+    $row=mysqli_fetch_assoc($result);
 
-    $response=@mysqli_query($dbc, $query);
-    $row=mysqli_fetch_array($response);
-    if($response){
-        echo 
-        '<form action="/action_page.php">
-        <label for="fname">First name:</label>
-        <input type="text" id="fname" name="fname" value='. $row['firstName'] . 'style="border-radius: 5px; margin: 5px;"
-          readonly><br>
-        <label for="lname">Last name:</label>
-        <input type="text" id="lname" name="lname" value='. $row['lastName'] . ' style="border-radius: 5px; margin: 5px;"
-          readonly><br><br>
 
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" value='. $row['email'] . '
-          style="border-radius: 5px; margin: 5px;" readonly><br><br>
+    echo '<form action="/action_page.php">
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname" value='. $row['firstName'] . 'style="border-radius: 5px; margin: 5px;"
+      readonly><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname" value='. $row['lastName'] . ' style="border-radius: 5px; margin: 5px;"
+      readonly><br><br>
 
-        <label for="address">Address Line 1:</label>
-        <input type="text" id="address" name="address" value='. $row['address'] . '
-          style="border-radius: 5px; margin: 5px;" readonly><br>
-        <label for="city">City:</label>
-        <input type="text" id="city" name="city" value='. $row['city'] . ' style="border-radius: 5px; margin: 5px;"
-          readonly><br>
-        <label for="state">State:</label>
-        <input type="text" id="state" name="state" value='. $row['state'] . ' style="border-radius: 5px; margin: 5px;"
-          readonly><br>
-        <label for="ZIP">ZIP Code:</label>
-        <input type="text" id="ZIP" name="ZIP" value="'. $row['zipCode'] . '" style="border-radius: 5px; margin: 5px;"
-          readonly><br>
-      </form>';
-    }
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" value='. $email . '
+      style="border-radius: 5px; margin: 5px;" readonly><br><br>
+
+    <label for="address">Address Line 1:</label>
+    <input type="text" id="address" name="address" value='. $row['address'] . '
+      style="border-radius: 5px; margin: 5px;" readonly><br>
+    <label for="city">City:</label>
+    <input type="text" id="city" name="city" value='. $row['city'] . ' style="border-radius: 5px; margin: 5px;"
+      readonly><br>
+    <label for="state">State:</label>
+    <input type="text" id="state" name="state" value='. $row['state'] . ' style="border-radius: 5px; margin: 5px;"
+      readonly><br>
+    <label for="ZIP">ZIP Code:</label>
+    <input type="text" id="ZIP" name="ZIP" value='. $row['zipCode'] . ' style="border-radius: 5px; margin: 5px;"
+      readonly><br>
+    </form>';
+
 ?>
