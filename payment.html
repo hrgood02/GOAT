@@ -54,7 +54,10 @@
                         </li>
                         <!--if not logged in; if logged in, 2 list items: account and log out!-->
                         <li class="nav-item">
-                            <a class="nav-link" href="login.html">Log In</a>
+                            <a class="nav-link" href="account.php">Account</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Log Out</a>
                         </li>
                     </ul>
                     <form>
@@ -73,7 +76,7 @@
                     style=" width: 100%; background-color: white; border-radius: 30px; padding: 15px;">
                     <div class="row">
                         <div class="col">
-                            <h2 style="color: black; width: 100%;">Make a Payment</h2>
+                            <h2 style="color: black; width: 100%;">Purchase a Book</h2>
                         </div>
                     </div>
                     <div class="row">
@@ -112,8 +115,16 @@
                     </div>
                     <div class="row">
                         <div class="col">
-
+                            <label for="month">Expiration Month:</label>
+                            <input type="text" id="month" name="month" placeholder="01" style="width: 100%; border-radius: 5px;">
                         </div>
+                        <div class="col">
+                            <label for="year">Expiration Year:</label>
+                            <input type="text" id="year" name="year" placeholder="2022" style="width: 100%; border-radius: 5px;">
+                        </div>
+                    </div>
+                    <div class="row" style="padding: 10px;">
+                        <button style="width: 100%; border-radius: 5px;">Buy!</button>
                     </div>
                 </div>
             </div>

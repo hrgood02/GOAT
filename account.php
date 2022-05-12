@@ -29,6 +29,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/dashboard.css" rel="stylesheet">
+  <link href="css/popups.css" rel="stylesheet">
 </head>
 
 <body style="
@@ -36,6 +37,8 @@ background-image: url('images/nypllight.jpg');
 height: 100vh;
 background-attachment: fixed;
 margin-bottom: 50px;">
+
+
 
   <div class="container-fluid">
     <div class="row">
@@ -76,8 +79,7 @@ margin-bottom: 50px;">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
           <div class="container-fluid">
             <a class="navbar-brand" href="home.html">Library</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04"
-              aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -104,20 +106,15 @@ margin-bottom: 50px;">
         <div class="container">
           <div class="row">
             <div class="col">
-              <div
-                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-                style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
+              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
                 <h1 class="h2">My Info</h1>
               </div>
-              <div class="container"
-                style="border:gray; border-style: dotted; background-color: #ffffff80; border-radius: 10px; padding: 10px;">
-                <?php include 'php/accountFunctions.php';?>
+              <div class="container" style="border:gray; border-style: dotted; background-color: #ffffff80; border-radius: 10px; padding: 10px;">
+                <?php include 'php/accountFunctions.php'; ?>
               </div>
             </div>
             <div class="col">
-              <div
-                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-                style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
+              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
                 <h1 class="h2">My Account:</h1>
               </div>
               <div class="container"
@@ -129,9 +126,7 @@ margin-bottom: 50px;">
                  <a href="delete.php"><b>Deactivate Account</b></a>
                 </p>
               </div>
-              <div
-                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-                style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
+              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
                 <h1 class="h2">My Library Card</h1>
                 
               </div>
@@ -148,17 +143,8 @@ margin-bottom: 50px;">
     </div>
   </div>
 
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="width: 100%; background-color: #212529; bottom: 0px;">
-    <p class="col-md-4 mb-0 justify-content-center text-muted">Public Library</p>
-
-    <a href="/" class="nav col-md-4 justify-content-end" style="margin: 30px;">
-      <img class="mb-4" src="images/book.jpg" alt="" width="72">
-    </a>
-
-  </footer>
-
   <script src="js/bootstrap.bundle.min.js"></script>
-
+  <script src="js/popups.js"></script>
 
 </body>
 
