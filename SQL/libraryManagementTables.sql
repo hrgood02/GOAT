@@ -15,6 +15,8 @@ drop table if exists libraryAccount;
 drop table if exists adminAccount;
 drop table if exists checksOut;
 drop table if exists accesses;
+drop table if exists holds;
+drop table if exists booklist;
 
 SET foreign_key_checks = 1;
 
@@ -106,7 +108,7 @@ create table adminAccount(
 
 
 create table checksOut(
-    ISBN varchar(10),ac
+    ISBN varchar(10),
     accountNo int,
     outDate date,
     dueDate date,
@@ -126,4 +128,22 @@ create table accesses(
     primary key (ISSN, accountNo),
     foreign key (ISSN) references journals(ISSN),
     foreign key (accountNo) references libraryAccount(accountNo)
+);
+
+create table holds(
+    ISBN varchar(10),
+    accountNo int,
+    expectedDate date,
+    primary key (ISBN, accountNo),
+    foreign key(ISBN) references media(ISBN),
+    foreign key(accountNo) references libraryAccount(accountNo)
+);
+
+create table booklist(
+    ISBN varchar(10),
+    accountNo int,
+    available boolean,
+    primary key (ISBN, accountNo),
+    foreign key(ISBN) references media(ISBN),
+    foreign key(accountNo) references libraryAccount(accountNo)
 );

@@ -61,6 +61,13 @@ insert into contributes values ("20782489", 1, 2021);
 insert into contributes values ("20782489", 2, 2021);
 insert into contributes values ("20782489", 3, 2021);
 
+INSERT INTO `checksOut`(`ISBN`, `accountNo`, `outDate`, `dueDate`, `copyNo`, `fine`) VALUES ('0545174813','1','2022-04-20','2022-05-04','1','.80');
+
+INSERT INTO `holds`(`ISBN`, `accountNo`, `expectedDate`) VALUES ('0590402331','1','2022-05-19');
+INSERT INTO `holds`(`ISBN`, `accountNo`, `expectedDate`) VALUES ('067978327X','1','2022-05-22');
+
+INSERT INTO `booklist`(`ISBN`, `accountNo`, `available`) VALUES ('0679783261','1','1');
+
 #checks out a book
 #update media SET copiesOnHand = copiesOnHand - 1 where ISBN = "0590402331";
 

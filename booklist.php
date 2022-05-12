@@ -54,25 +54,25 @@
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="account.html">
+              <a class="nav-link" aria-current="page" href="account.php">
                 <span data-feather="home"></span>
                 My Account
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="booklist.html">
+              <a class="nav-link active" href="booklist.php">
                 <span data-feather="file"></span>
                 My Book List
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="checkedout.html">
+              <a class="nav-link" href="checkedout.php">
                 <span data-feather="shopping-cart"></span>
                 Checked Out
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="holds.html">
+              <a class="nav-link" href="holds.php">
                 <span data-feather="users"></span>
                 Holds
               </a>
@@ -99,7 +99,7 @@
                 </li>
                 <!--if not logged in; if logged in, 2 list items: account and log out!-->
                 <li class="nav-item">
-                  <a class="nav-link" href="account.html">My Account</a>
+                  <a class="nav-link" href="account.php">My Account</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="login.html">Log Out</a>
@@ -120,16 +120,8 @@
 
         <div class="grid-container">
           <div class="character-container">
-            <div class="grid-item">
-              <div class="card">
-                <div class="card-body" style="background-color:coral;">
-                  <h5 class="card-title">Moby Dick</h5>
-                  <p class="card-text">Author: Herman Melville</p>
-                  <p class="card-text">Description: Moby-Dick; or, The Whale is an 1851 novel by American writer Herman Melville. The book is the sailor Ishmael's narrative of the obsessive quest of Ahab, captain of the whaling ship Pequod, for revenge on Moby Dick, the giant white sperm whale that on the ship's previous voyage bit off Ahab's leg at the knee.</p>
-                  <p class="card-text"><small class="text-muted">Currently available!</small></p>
-                </div>
-              </div>
-            </div>
+            <?php include 'php/listBook.php'; ?>
+            
 
           </div>
         </div>

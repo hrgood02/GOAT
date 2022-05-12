@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Account</title>
+  <title>Checked Out</title>
 
 
 
@@ -24,6 +24,15 @@
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
       }
+      .character-container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    overflow: hidden;
+    column-gap: 1px;
+    height: 100vh;
+}
+
+.grid-item{margin: 5px;}
     }
   </style>
 
@@ -32,10 +41,9 @@
 </head>
 
 <body style="
-background-image: url('images/nypllight.jpg');
-height: 100vh;
-background-attachment: fixed;
-margin-bottom: 50px;">
+  background-image: url('images/nypllight.jpg');
+  height: 100vh;
+  background-attachment: fixed;">
 
   <div class="container-fluid">
     <div class="row">
@@ -43,26 +51,26 @@ margin-bottom: 50px;">
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="account.html">
+              <a class="nav-link" aria-current="page" href="account.php">
                 <span data-feather="home"></span>
                 My Account
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="booklist.html">
+              <a class="nav-link" href="booklist.php">
                 <span data-feather="file"></span>
                 My Book List
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="checkedout.html">
-                <span data-feather="file"></span>
+              <a class="nav-link active" href="checkedout.php">
+                <span data-feather="shopping-cart"></span>
                 Checked Out
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="holds.html">
-                <span data-feather="file"></span>
+              <a class="nav-link" href="holds.php">
+                <span data-feather="users"></span>
                 Holds
               </a>
             </li>
@@ -73,6 +81,7 @@ margin-bottom: 50px;">
       </nav>
 
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
         <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
           <div class="container-fluid">
             <a class="navbar-brand" href="home.html">Library</a>
@@ -88,7 +97,7 @@ margin-bottom: 50px;">
                 </li>
                 <!--if not logged in; if logged in, 2 list items: account and log out!-->
                 <li class="nav-item">
-                  <a class="nav-link" href="account.html">My Account</a>
+                  <a class="nav-link" href="account.php">My Account</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="login.html">Log Out</a>
@@ -101,52 +110,36 @@ margin-bottom: 50px;">
           </div>
         </nav>
 
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <div
-                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-                style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
-                <h1 class="h2">My Info</h1>
-              </div>
-              <div class="container"
-                style="border:gray; border-style: dotted; background-color: #ffffff80; border-radius: 10px; padding: 10px;">
-                <?php include 'php/accountFunctions.php';?>
-              </div>
-            </div>
-            <div class="col">
-              <div
-                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-                style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
-                <h1 class="h2">My Account:</h1>
-              </div>
-              <div class="container"
-                style="border:gray; border-style: dotted; background-color: #ffffff80; border-radius: 10px; padding: 10px; margin-top: 20px;">
-                <p>Current Fines: $0.00 <a href="fines.html"><b>Pay</b></a><br>
-                 <a href="password.html"><b>Change Password</b></a><br>
-                 <a href="password.html"><b>Deactivate Account</b></a>
-                </p>
-              </div>
-              <div
-                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-                style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
-                <h1 class="h2">My Library Card</h1>
-                <button class="btn btn-lg btn-primary">Change Pin</button>
-              </div>
-              <div class="container"
-                style="border:gray; border-style: dotted; background-color: #ffffff80; border-radius: 10px; padding: 10px;">
-                <p>Card #: 1122334455</p>
-                <p>PIN: ****</p>
-                <p>Current Books: 2</p>
-                <p>Total Books: 26</p>
-              </div>
-            </div>
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+          style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
+          <h1 class="h2">Checked Out</h1>
+        </div>
+
+        
+        <div class="grid-container">
+          <div class="character-container">
+            <?php include 'php/outBooks.php';?>
           </div>
         </div>
+
+        
+ 
+
 
       </main>
     </div>
   </div>
+
+  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="width: 100%; background-color: #212529; bottom: 0;
+    left: 0;">
+    <p class="col-md-4 mb-0 text-muted">Public Library</p>
+
+    <a href="/" class="nav col-md-4 justify-content-end" style="margin: 30px;">
+      <img class="mb-4" src="images/book.jpg" alt="" width="72">
+    </a>
+
+  </footer>
 
   <script src="js/bootstrap.bundle.min.js"></script>
 

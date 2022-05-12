@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Incorrect</title>
+  <title>Are You Sure?</title>
 
 
 
@@ -47,8 +47,26 @@
   background-image: url('images/nypllight.jpg');
   height: 100vh;
   background-attachment: fixed;">
+  
+  <script>
+    if(!(confirm("Are you sure you want to delete your account?"))){
+        window.location = ('account.php') 
+        console.log(window.location)
+    }
 
-    <script>alert("Invalid Email or Password. Go back and try again.");</script>
+  </script>
+
+  <?php
+    session_start();
+    include "php/sql_conn.php";
+    $accountNo=$_SESSION['id'];
+    $query="DELETE from `libraryAccount` where `accountNo` = '".$accountNo."'";
+    $response = @mysqli_query($dbc, $query);
+    echo "Account Deleted";
+    sleep(3);
+    header("location: home.html");
+  ?>
+
 
   <script src="js/bootstrap.bundle.min.js"></script>
 

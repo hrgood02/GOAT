@@ -43,25 +43,25 @@ margin-bottom: 50px;">
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="account.html">
+              <a class="nav-link active" aria-current="page" href="account.php">
                 <span data-feather="home"></span>
                 My Account
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="booklist.html">
+              <a class="nav-link" href="booklist.php">
                 <span data-feather="file"></span>
                 My Book List
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="checkedout.html">
+              <a class="nav-link" href="checkedout.php">
                 <span data-feather="file"></span>
                 Checked Out
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="holds.html">
+              <a class="nav-link" href="holds.php">
                 <span data-feather="file"></span>
                 Holds
               </a>
@@ -88,10 +88,10 @@ margin-bottom: 50px;">
                 </li>
                 <!--if not logged in; if logged in, 2 list items: account and log out!-->
                 <li class="nav-item">
-                  <a class="nav-link" href="account.html">My Account</a>
+                  <a class="nav-link" href="account.php">My Account</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="login.html">Log Out</a>
+                  <a class="nav-link" href="php/logout.php">Log Out</a>
                 </li>
               </ul>
               <form>
@@ -122,23 +122,23 @@ margin-bottom: 50px;">
               </div>
               <div class="container"
                 style="border:gray; border-style: dotted; background-color: #ffffff80; border-radius: 10px; padding: 10px; margin-top: 20px;">
-                <p>Current Fines: $0.00 <a href="fines.html"><b>Pay</b></a><br>
-                 <a href="password.html"><b>Change Password</b></a><br>
-                 <a href="password.html"><b>Deactivate Account</b></a>
+                <?php include 'php/fine.php';?>
+                
+                
+                 <a href="changePassword.html"><b>Change Password</b></a><br>
+                 <a href="delete.php"><b>Deactivate Account</b></a>
                 </p>
               </div>
               <div
                 class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
                 style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
                 <h1 class="h2">My Library Card</h1>
-                <button class="btn btn-lg btn-primary">Change Pin</button>
+                
               </div>
               <div class="container"
                 style="border:gray; border-style: dotted; background-color: #ffffff80; border-radius: 10px; padding: 10px;">
-                <p>Card #: 1122334455</p>
-                <p>PIN: ****</p>
-                <p>Current Books: 2</p>
-                <p>Total Books: 26</p>
+                <?php include 'php/cardInfo.php'; ?>
+              
               </div>
             </div>
           </div>
