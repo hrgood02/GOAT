@@ -29,6 +29,7 @@
 
   <!-- Custom styles for this template -->
   <link href="css/dashboard.css" rel="stylesheet">
+  <link href="css/popups.css" rel="stylesheet">
 </head>
 
 <body style="
@@ -36,6 +37,8 @@ background-image: url('images/nypllight.jpg');
 height: 100vh;
 background-attachment: fixed;
 margin-bottom: 50px;">
+
+
 
   <div class="container-fluid">
     <div class="row">
@@ -76,8 +79,7 @@ margin-bottom: 50px;">
         <nav class="navbar navbar-expand-md navbar-dark bg-dark" aria-label="Fourth navbar example">
           <div class="container-fluid">
             <a class="navbar-brand" href="home.html">Library</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04"
-              aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -104,37 +106,99 @@ margin-bottom: 50px;">
         <div class="container">
           <div class="row">
             <div class="col">
-              <div
-                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-                style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
+              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
                 <h1 class="h2">My Info</h1>
               </div>
-              <div class="container"
-                style="border:gray; border-style: dotted; background-color: #ffffff80; border-radius: 10px; padding: 10px;">
-                <?php include 'php/accountFunctions.php';?>
+              <div class="container" style="border:gray; border-style: dotted; background-color: #ffffff80; border-radius: 10px; padding: 10px;">
+                <?php include 'php/accountFunctions.php'; ?>
               </div>
             </div>
             <div class="col">
-              <div
-                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-                style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
+              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
                 <h1 class="h2">My Account:</h1>
               </div>
-              <div class="container"
-                style="border:gray; border-style: dotted; background-color: #ffffff80; border-radius: 10px; padding: 10px; margin-top: 20px;">
-                <p>Current Fines: $0.00 <a href="fines.html"><b>Pay</b></a><br>
-                 <a href="password.html"><b>Change Password</b></a><br>
-                 <a href="password.html"><b>Deactivate Account</b></a>
+              <div class="container" style="border:gray; border-style: dotted; background-color: #ffffff80; border-radius: 10px; padding: 10px; margin-top: 20px;">
+                <p>Current Fines: $0.00 <button>Pay Fines</button><br>
+                  <!-- Trigger/Open The Modal -->
+                  <button id="myModal" onclick = "myFunction(this)">Change Password</button>
+
+                  <!-- The Modal -->
+                <div id="myModal" class="modal">
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <div class="grid-container" style="width: 100%;">
+                      <div class="row">
+                        <div class="col">
+                          <span class="close">&times;</span>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-4"></div>
+                        <div class="col">
+                          <div class="container" style=" width: 100%; background-color: white; border-radius: 30px;">
+                            <div class="row">
+                              <div class="col">
+                                <h2 style="color: black; width: 100%;">Make a Payment</h2>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col"></div>
+                              <div class="col">
+                                <input type="radio" id="credit" name="paymenttype" value="credit">
+                                <label for="credit">Credit</label>
+                              </div>
+                              <div class="col">
+                                <input type="radio" id="debit" name="paymenttype" value="debit">
+                                <label for="debit">Debit</label>
+                              </div>
+                              <div class="col"></div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <input type="text" id="firstname" name="firstname" placeholder="First Name" style="width: 100%; border-radius: 5px;">
+                              </div>
+                              <div class="col">
+                                <input type="text" id="lastname" name="lastname" placeholder="Last Name" style="width: 100%; border-radius: 5px;">
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-9">
+                                <label for="cardNo">Card #:</label>
+                                <input type="text" id="cardNo" name="cardNo" placeholder="xxxx-xxxx-xxxx-xxxx" style="width: 100%; border-radius: 5px;">
+                              </div>
+                              <div class="col">
+                                <label for="cvv">CVV:</label>
+                                <input type="text" id="cvv" name="cvv" placeholder="123" style="width: 100%; border-radius: 5px;">
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <label for="month">Expiration Month:</label>
+                                <input type="text" id="month" name="month" placeholder="01" style="width: 100%; border-radius: 5px;">
+                              </div>
+                              <div class="col">
+                                <label for="year">Expiration Year:</label>
+                                <input type="text" id="year" name="year" placeholder="2022" style="width: 100%; border-radius: 5px;">
+                              </div>
+                            </div>
+                            <div class="row" style="padding: 10px;">
+                              <button style="width: 100%; border-radius: 5px;">Pay</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-4"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button>Deactivate Account</button>
                 </p>
               </div>
-              <div
-                class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-                style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
+              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom" style="background-color: #ffffff; border-radius: 10px; padding: 15px; margin: 5px;">
                 <h1 class="h2">My Library Card</h1>
                 <button class="btn btn-lg btn-primary">Change Pin</button>
               </div>
-              <div class="container"
-                style="border:gray; border-style: dotted; background-color: #ffffff80; border-radius: 10px; padding: 10px;">
+              <div class="container" style="border:gray; border-style: dotted; background-color: #ffffff80; border-radius: 10px; padding: 10px;">
                 <p>Card #: 1122334455</p>
                 <p>PIN: ****</p>
                 <p>Current Books: 2</p>
@@ -148,17 +212,8 @@ margin-bottom: 50px;">
     </div>
   </div>
 
-  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" style="width: 100%; background-color: #212529; bottom: 0px;">
-    <p class="col-md-4 mb-0 justify-content-center text-muted">Public Library</p>
-
-    <a href="/" class="nav col-md-4 justify-content-end" style="margin: 30px;">
-      <img class="mb-4" src="images/book.jpg" alt="" width="72">
-    </a>
-
-  </footer>
-
   <script src="js/bootstrap.bundle.min.js"></script>
-
+  <script src="js/popups.js"></script>
 
 </body>
 
