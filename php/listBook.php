@@ -1,6 +1,6 @@
 <?php
     require_once('sql_conn.php');
-    session_start();
+
 
     $id = $_SESSION["id"];
     $result = mysqli_query($dbc,"SELECT * from booklist NATURAL JOIN media NATURAL JOIN mediaInfo 
