@@ -17,6 +17,7 @@ drop table if exists checksOut;
 drop table if exists accesses;
 drop table if exists holds;
 drop table if exists booklist;
+drop table if exists payment;
 
 SET foreign_key_checks = 1;
 
@@ -146,4 +147,15 @@ create table booklist(
     primary key (ISBN, accountNo),
     foreign key(ISBN) references media(ISBN),
     foreign key(accountNo) references libraryAccount(accountNo)
+);
+
+create table payment(
+    type varchar(7),
+    firstName varchar(25),
+    lastName varchar(25),
+    cardNo varchar(20),
+    cvv int,
+    month int,
+    year int,
+    primary key(cardNo)
 );
