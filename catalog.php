@@ -31,7 +31,6 @@
         .character-container {
         display: grid;
         grid-template-columns: 33% 33% 33%;
-        overflow: hidden;
         column-gap: 1px;
         height: 100vh;
         padding: 5px;
@@ -40,6 +39,8 @@
 
       .grid-item {
         margin: 5px;
+        height:400px;
+        overflow:auto;
       }
       }
     </style>
@@ -84,16 +85,7 @@
 
   <div class="grid-container">
     <div class="character-container">
-      <div class="grid-item">
-        <div class="card">
-          <div class="card-body" style="background-color: cornflowerblue;">
-            <h5 class="card-title">The Fault in Our Stars</h5>
-            <p class="card-text">Author: John Green</p>
-            <p class="card-text">Description: The Fault in Our Stars is a novel by John Green. It is his fourth solo novel, and sixth novel overall. It was published on January 10, 2012</p>
-            <p class="card-text"><small class="text-muted">Estimated available: June 3</small></p>
-          </div>
-        </div>
-      </div>
+      <?php include 'php/catalogBooks.php'; ?>
 
     </div>
   </div>
